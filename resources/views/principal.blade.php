@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-    Contenido de la página
+<p class="text-center">Contenido de la página</p>
 @endsection
