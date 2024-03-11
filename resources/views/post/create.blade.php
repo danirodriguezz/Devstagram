@@ -4,13 +4,25 @@
     Crea una nueva publicación
 @endsection
 
+@push('styles')
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+@endpush
+
 @section('content')
     <div class="md:flex md:items-center">
         <div class="md:w-1/2 px-10">
-            Imagen aquí
+            {{-- Formulario donde subir la imagen --}}
+            <form 
+            action="{{ route('imagenes.store') }}" 
+            method="POST"
+            enctype="multipart/form-data"
+            id="dropzone" 
+            class="dropzone border-dashed border-2 w-full h-96 flex flex-col justify-center items-center">
+            @csrf
+            </form>
         </div>
         <div class="md:w-1/2 p-10 bg-white rounded-lg shadow-xl mt-10 mx-5 md:m-0">
-            <form action="{{ route('crear-cuenta.store') }}" method="POST">
+            <form action="{{ route('post.store') }}" method="POST">
                 @csrf
                 {{-- Titulo de la publicación --}}
                 <div class="mb-5">
@@ -37,6 +49,13 @@
                     >{{ old('descripcion') }}</textarea>
                     @error('descripcion')
                         <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                    @enderror
+                </div>
+                {{-- apartado oculto de la imagen --}}
+                <div class="mb-5">
+                    <input type="hidden" name="imagen" value="{{ old('imagen') }}">
+                    @error('imagen')
+                    <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                     @enderror
                 </div>
                 <input type="submit" value="Crear publicación"

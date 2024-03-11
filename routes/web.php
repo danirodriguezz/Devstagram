@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PostController;
@@ -22,6 +23,9 @@ Route::get('/', function () {
     return view('principal');
 });
 
+#---------------
+# Rutas públicas
+#---------------
 # Autenticacion y registro del usuario
 Route::get('/register', [RegisterController::class, 'index'])->name('crear-cuenta.index');
 Route::post('/register', [RegisterController::class, 'store'])->name('crear-cuenta.store');
@@ -29,6 +33,15 @@ Route::get('/login', [LoginController::class, 'index'])->name('login.index');
 Route::post('/login', [LoginController::class, 'store'])->name('login.store');
 Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
+#----------------
 # Rutas privadas
+#----------------
+# Muro de los usuarios
 Route::get('/{user:username}', [PostController::class, 'index'])->name('post.index');
+
+# Subida de post de los usuarios
 Route::get("/posts/create", [PostController::class, 'create'])->name('post.create');
+Route::post('/post', [PostController::class, 'store'])->name('post.store');
+
+# Rutas de la subida de imagenes
+Route::post('/imagenes', [ImageController::class, 'store'])->name('imagenes.store');
