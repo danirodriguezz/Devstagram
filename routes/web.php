@@ -38,10 +38,11 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 #----------------
 # Muro de los usuarios
 Route::get('/{user:username}', [PostController::class, 'index'])->name('post.index');
+Route::get("/{user:username}/posts/{post}", [PostController::class, 'show'])->name('post.show');
 
 # Subida de post de los usuarios
-Route::get("/posts/create", [PostController::class, 'create'])->name('post.create');
-Route::post('/post', [PostController::class, 'store'])->name('post.store');
+Route::get("/post/create", [PostController::class, 'create'])->name('post.create');
+Route::post('/posts', [PostController::class, 'store'])->name('post.store');
 
 # Rutas de la subida de imagenes
 Route::post('/imagenes', [ImageController::class, 'store'])->name('imagenes.store');
