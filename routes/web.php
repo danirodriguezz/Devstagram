@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
@@ -46,3 +47,5 @@ Route::post('/posts', [PostController::class, 'store'])->name('post.store');
 
 # Rutas de la subida de imagenes
 Route::post('/imagenes', [ImageController::class, 'store'])->name('imagenes.store');
+
+Route::post("/{user:username}/posts/{post}", [ComentarioController::class, 'store'])->name('comentario.store');

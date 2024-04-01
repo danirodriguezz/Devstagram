@@ -1,11 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    @if (auth()->user()->username == $user->username)
-        Tu cuenta
-    @else
         Perfil:{{ $user->username }}
-    @endif
 @endsection
 
 @section('content')
