@@ -49,3 +49,4 @@ Route::post('/posts', [PostController::class, 'store'])->name('post.store');
 Route::post('/imagenes', [ImageController::class, 'store'])->name('imagenes.store');
 
 Route::post("/{user:username}/posts/{post}", [ComentarioController::class, 'store'])->name('comentario.store');
+Route::delete("/posts/{post}", [PostController::class, 'destroy'])->name('post.destroy');
