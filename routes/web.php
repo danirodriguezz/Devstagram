@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PostController;
@@ -44,9 +45,12 @@ Route::get("/{user:username}/posts/{post}", [PostController::class, 'show'])->na
 # Subida de post de los usuarios
 Route::get("/post/create", [PostController::class, 'create'])->name('post.create');
 Route::post('/posts', [PostController::class, 'store'])->name('post.store');
-
-# Rutas de la subida de imagenes
+// Subida de Imagenes de Posts
 Route::post('/imagenes', [ImageController::class, 'store'])->name('imagenes.store');
-
+// Comentar un Post
 Route::post("/{user:username}/posts/{post}", [ComentarioController::class, 'store'])->name('comentario.store');
+// Eliminar posts
 Route::delete("/posts/{post}", [PostController::class, 'destroy'])->name('post.destroy');
+// Like a los Posts
+Route::post("/post/{post}/likes", [LikeController::class, 'store'])->name('post.like.store');
+Route::delete("/post/{post}/likes", [LikeController::class, 'destroy'])->name('post.like.destroy');
