@@ -11,7 +11,7 @@ class ImageController extends Controller
 {
     public function store(Request $request)
     {
-        // Arreglar la subida de imagenes al servidor buscar información
+        // Subir Imagen al servidor
         $manager = new ImageManager(new Driver());
         $imagen = $manager->read($request->file('file'));
         $nombreImagen = Str::uuid() . "." . $request->file('file')->extension();
