@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ComentarioController;
+use App\Http\Controllers\FollowerController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\LoginController;
@@ -55,7 +56,12 @@ Route::delete("/posts/{post}", [PostController::class, 'destroy'])->name('post.d
 Route::post("/post/{post}/likes", [LikeController::class, 'store'])->name('post.like.store');
 Route::delete("/post/{post}/likes", [LikeController::class, 'destroy'])->name('post.like.destroy');
 
+// Siguiendo a usuarios
+Route::post("/{user:username}/follow", [FollowerController::class, 'store'])->name('users.follow');
+Route::delete("/{user:username}/unfollow", [FollowerController::class, 'destroy'])->name('users.unfollow');
+
 // Muro de los usuarios
 Route::get('/{user:username}', [PostController::class, 'index'])->name('post.index');
 // Mostrar un post de un usuario
 Route::get("/{user:username}/posts/{post}", [PostController::class, 'show'])->name('post.show');
+
