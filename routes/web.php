@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\FollowerController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\LoginController;
@@ -23,9 +24,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 # Landing page
-Route::get('/', function () {
-    return view('principal');
-});
+Route::get('/', HomeController::class)->name('home.index');
 
 # Autenticacion y registro del usuario
 Route::get('/register', [RegisterController::class, 'index'])->name('crear-cuenta.index');

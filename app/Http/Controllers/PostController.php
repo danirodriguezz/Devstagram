@@ -20,7 +20,7 @@ class PostController extends Controller
             de cada usuario.
         */
         // Una forma de obtener los post asociados a cada usuario
-        $posts = Post::where('user_id', $user->id)->paginate(20);
+        $posts = Post::where('user_id', $user->id)->latest()->paginate(20);
         // Devolvemos la vista con los usuarios y los posts
         return view('dashboard', [
             'user' => $user,
