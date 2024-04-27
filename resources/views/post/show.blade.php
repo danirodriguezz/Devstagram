@@ -13,14 +13,14 @@
                     <livewire:like-post :post="$post"/>
                 @endauth
             </div>
-            <div>
+            <div class="p-3">
                 <p class="font-bold"> {{ $post->user->username }}</p>
                 <p class="text-sm text-gray-500">{{ $post->created_at->diffForHumans() }}</p>
                 <p class="mt-5">{{ $post->descripcion }}</p>
             </div>
             @auth
                 @if ($post->user_id == auth()->user()->id)    
-                    <form action="{{ route("post.destroy", $post) }}" method="POST">
+                    <form action="{{ route("post.destroy", $post) }}" method="POST" class="p-3">
                         @method('DELETE')
                         @csrf
                         <input
