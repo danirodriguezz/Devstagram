@@ -4,7 +4,6 @@ use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\FollowerController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
-use App\Http\Controllers\LikeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PerfilController;
@@ -50,10 +49,6 @@ Route::post("/{user:username}/posts/{post}", [ComentarioController::class, 'stor
 
 // Eliminar posts
 Route::delete("/posts/{post}", [PostController::class, 'destroy'])->name('post.destroy');
-
-// Like a los Posts
-Route::post("/post/{post}/likes", [LikeController::class, 'store'])->name('post.like.store');
-Route::delete("/post/{post}/likes", [LikeController::class, 'destroy'])->name('post.like.destroy');
 
 // Siguiendo a usuarios
 Route::post("/{user:username}/follow", [FollowerController::class, 'store'])->name('users.follow');
