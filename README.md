@@ -42,6 +42,8 @@ Devstagram es una aplicación web desarrollada con Laravel y Sail que permite a 
     ./vendor/bin/sail artisan migrate
     ```
 
+7. Visita http://localhost en tu navegador para ver la aplicación Devstagram.
+
 ## Uso
 
 1. Registrate en la aplicación creando un nuevo usuario
@@ -52,4 +54,20 @@ Devstagram es una aplicación web desarrollada con Laravel y Sail que permite a 
 
 ## Mockups de Ordenador
 
+![Mockup de escitorio](./imagenes/escritorio/e1.png)
+
+![Mockup de escitorio](./imagenes/escritorio/e2.png)
+
+![Mockup de escitorio](./imagenes/escritorio/e3.png)
+
+![Mockup de escitorio](./imagenes/escritorio/e4.png)
+
+![Mockup de escitorio](./imagenes/escritorio/e5.png)
+
 ## Mockups de Movil
+
+![Mockup de escitorio](./imagenes/movil/m1.png)
+
+![Mockup de escitorio](./imagenes/movil/m2.png)
+
+![Mockup de escitorio](./imagenes/movil/m3.png)
