@@ -54,20 +54,20 @@ Devstagram es una aplicación web desarrollada con Laravel y Sail que permite a 
 
 ## Mockups de Ordenador
 
-![Mockup de escitorio](./imagenes/escritorio/e1.png)
+![Mockup de escitorio](docs/mockups/e1.png)
 
-![Mockup de escitorio](./imagenes/escritorio/e2.png)
+![Mockup de escitorio](docs/mockups/e2.png)
 
-![Mockup de escitorio](./imagenes/escritorio/e3.png)
+![Mockup de escitorio](docs/mockups/e3.png)
 
-![Mockup de escitorio](./imagenes/escritorio/e4.png)
+![Mockup de escitorio](docs/mockups/e4.png)
 
-![Mockup de escitorio](./imagenes/escritorio/e5.png)
+![Mockup de escitorio](docs/mockups/e5.png)
 
 ## Mockups de Movil
 
-![Mockup de escitorio](./imagenes/movil/m1.png)
+![Mockup de escitorio](docs/mockups/m1.png)
 
-![Mockup de escitorio](./imagenes/movil/m2.png)
+![Mockup de escitorio](docs/mockups/m2.png)
 
-![Mockup de escitorio](./imagenes/movil/m3.png)
+![Mockup de escitorio](docs/mockups/m3.png)
